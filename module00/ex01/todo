@@ -1,0 +1,3 @@
+== todo ==
+* change cin into getline {bc cin have some issues when inputing space between strings}
+
