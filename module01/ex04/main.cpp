@@ -37,8 +37,8 @@ int main(int ac, char **av) {
   ifstream file;
   ofstream new_file;
 
-  file.open(file_name, ios::in);
-  new_file.open(new_file_name, ios::out);
+  file.open(file_name.c_str(), ios::in);
+  new_file.open(new_file_name.c_str(), ios::out);
 
   if (file.is_open() == false) {
     string err("SFL : " + file_name + " ");
