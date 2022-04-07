@@ -6,11 +6,14 @@ using std::string;
 
 class Harl {
 private:
-  void debug(void);
-  void info(void);
-  void warning(void);
-  void error(void);
+    static void debug();
+
+    static void info();
+
+    static void warning();
+
+    static void error();
 
 public:
-  void complain(std::string level);
+    static void complain(std::string level);
 };

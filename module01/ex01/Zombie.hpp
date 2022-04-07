@@ -3,14 +3,14 @@
 
 class Zombie {
 private:
-  std::string _name;
+    std::string _name;
 
 public:
-  Zombie(void);
-  Zombie(std::string name);
-  ~Zombie(void);
+    Zombie();
 
-  void announce(void);
+    ~Zombie();
 
-  Zombie *zombieHorde(int N, std::string name);
+    void announce();
+
+    Zombie *zombieHorde(int N, std::string name);
 };

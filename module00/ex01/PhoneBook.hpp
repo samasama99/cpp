@@ -21,16 +21,19 @@
 
 class PhoneBook {
 private:
-  Contact contacts[8];
-  size_t index;
-  size_t num_of_contacts;
+    Contact _contacts[8];
+    size_t _index;
+    size_t _num_contacts;
 
 private:
-  Contact read_info();
+    static Contact read_info();
 
 public:
-  PhoneBook();
-  void add_contact();
-  void search_contact();
+    PhoneBook();
+
+    void add_contact();
+
+    void search_contact() const;
 };
+
 #endif

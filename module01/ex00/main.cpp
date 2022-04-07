@@ -1,14 +1,14 @@
 #include "Zombie.hpp"
 
-int main(void) {
-  // self destructive ?
-  Zombie tmp2("Stack");
+int main() {
+    // self destructive ?
+    Zombie tmp2("Stack");
 
-  // self destructive ?
-  tmp2.randomChump("Inside Methode");
+    // self destructive ?
+    tmp2.randomChump("Inside Methode");
 
-  // needs to be freed ?
-  Zombie *tmp = tmp2.newZombie("Heap");
+    // needs to be freed ?
+    Zombie *tmp = tmp2.newZombie("Heap");
 
-  delete tmp;
+    delete tmp;
 }

@@ -13,46 +13,37 @@
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact() {}
-
-void Contact::new_contact(std::string name, std::string last_name,
-                          std::string nick_name, std::string darkest_secret,
-                          uint64_t number) {
-  if (name.empty() == false)
-    this->name = name;
-  else
-    std::cout << "hello\n";
-  this->last_name = last_name;
-  this->nick_name = nick_name;
-  this->darkest_secret = darkest_secret;
-  this->number = number;
-}
+Contact::Contact(string name, string last_name,
+                 string nick_name, string darkest_secret,
+                 size_t number) : _name(std::move(name)), _last_name(std::move(last_name)),
+                                  _nick_name(std::move(nick_name)),
+                                  _darkest_secret(std::move(darkest_secret)), _number{number} {}
 
 void print_field(std::string str) {
-  size_t i = 0;
+    size_t i = 0;
 
-  while (i < 9) {
-    std::cout << str[i];
-    i++;
-  }
+    while (i < 9 && str[i]) {
+        std::cout << str[i];
+        i++;
+    }
 
-  if (str.length() > 9)
-    std::cout << '.';
+    if (str.length() > 9)
+        std::cout << '.';
 }
 
-void Contact::display_contact_brief() {
-  print_field(name);
-  std::cout << " | ";
-  print_field(last_name);
-  std::cout << " | ";
-  print_field(nick_name);
-  std::cout << "\n";
+void Contact::display_contact_brief() const {
+    print_field(_name);
+    std::cout << " | ";
+    print_field(_last_name);
+    std::cout << " | ";
+    print_field(_nick_name);
+    std::cout << "\n";
 }
 
-void Contact::display_contact_extended() {
-  std::cout << "Name :" << name << '\n';
-  std::cout << "Last name :" << last_name << '\n';
-  std::cout << "Nick name :" << nick_name << '\n';
-  std::cout << "Darkest secret :" << darkest_secret << '\n';
-  std::cout << "Number :" << number << '\n';
+void Contact::display_contact_extended() const {
+    std::cout << "Name :" << _name << '\n';
+    std::cout << "Last _name :" << _last_name << '\n';
+    std::cout << "Nick _name :" << _nick_name << '\n';
+    std::cout << "Darkest secret :" << _darkest_secret << '\n';
+    std::cout << "Number :" << _number << '\n';
 }

@@ -18,21 +18,27 @@
 #include <iostream>
 #include <string>
 
+using std::string;
+
 class Contact {
 
 private:
-  std::string name;
-  std::string last_name;
-  std::string nick_name;
-  std::string darkest_secret;
-  uint64_t number;
+    string _name;
+    string _last_name;
+    string _nick_name;
+    string _darkest_secret;
+    size_t _number;
 
 public:
-  Contact();
-  void new_contact(std::string name, std::string last_name,
-                   std::string nick_name, std::string darkest_secret,
-                   uint64_t number);
-  void display_contact_brief();
-  void display_contact_extended();
+    Contact(string name, string last_name,
+            string nick_name, string darkest_secret,
+            size_t number);
+
+    Contact() = default;
+
+    void display_contact_brief() const;
+
+    void display_contact_extended() const;
 };
+
 #endif

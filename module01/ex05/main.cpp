@@ -1,10 +1,9 @@
 #include "Harl.hpp"
 
-int main(void) {
-  Harl harl;
-  harl.complain("DEBUG");
-  harl.complain("INFO");
-  harl.complain("WARNING");
-  harl.complain("ERROR");
-  harl.complain("TRASH");
+int main() {
+    Harl::complain("DEBUG");
+    Harl::complain("INFO");
+    Harl::complain("WARNING");
+    Harl::complain("ERROR");
+    Harl::complain("TRASH");
 }

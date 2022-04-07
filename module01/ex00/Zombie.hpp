@@ -3,15 +3,18 @@
 
 class Zombie {
 private:
-  std::string _name;
+    std::string _name;
 
 public:
-  Zombie(void);
-  Zombie(std::string name);
-  ~Zombie(void);
+    Zombie();
 
-  void announce(void);
+    explicit Zombie(const std::string &name);
 
-  Zombie *newZombie(std::string name);
-  void randomChump(std::string name);
+    ~Zombie();
+
+    void announce();
+
+    Zombie *newZombie(std::string name);
+
+    void randomChump(std::string name);
 };
